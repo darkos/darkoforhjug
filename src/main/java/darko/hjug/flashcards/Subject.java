@@ -11,6 +11,10 @@ public class Subject {
 
     private ArrayList<FlashCard> cards;
 
+    public Subject() {
+        this("unnamed");
+    }
+
     public Subject(String name) {
         this.name = name;
         cards = new ArrayList<FlashCard>();
@@ -102,6 +106,7 @@ public class Subject {
     public String getName() {
         return name;
     }
+    public void setName(String name) {this.name = name;}
 
     public ArrayList<FlashCard> getCards() {
         return cards;

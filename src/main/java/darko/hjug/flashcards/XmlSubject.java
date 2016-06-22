@@ -28,7 +28,7 @@ public class XmlSubject {
         initDocumentFromXml(xmlFile);
     }
 
-    private void initDocumentFromXml(String xmlFile) {
+    public void initDocumentFromXml(String xmlFile) {
         SAXReader reader = new SAXReader();
         try {
             this.document = reader.read(xmlFile);

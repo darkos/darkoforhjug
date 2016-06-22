@@ -101,6 +101,16 @@ public class SubjectTest extends TestCase{
         assertEquals(card2.getTitle(), card3.getTitle());
     }
 
+    public void testSetSubjectName() {
+        subject.setName("Change Subject Name");
+        assertEquals("Change Subject Name", subject.getName());
+    }
+
+    public void testSubjectDefaultConstructor() {
+        Subject noName = new Subject();
+        assertEquals("unnamed", noName.getName());
+    }
+
     public void testCardDownByObject() {
         int oneBeforeLast = this.subject.getCardCount()-2;
         FlashCard card1 = subject.getCard(oneBeforeLast);
