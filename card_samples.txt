@@ -1,0 +1,49 @@
+Which two method you need to implement for key Object in HashMap ?
+-------------------------------
+In order to use any object as Key in HashMap, it must implements equals and hashcode method in Java. 
+Read How HashMap works in Java  for detailed explanation on how equals and hashcode method is used to put and get object from HashMap. 
+=================================
+
+##################################3#############################
+#   What is immutable object? Can you write immutable object?  #
+#--------------------------------------------------------------#
+# Immutable classes are Java classes whose objects can not be  #
+# modified once created. Any modification in Immutable object  #
+# result in new object. For example is String is immutable in  #
+# Java. Mostly Immutable are also final in Java, in order to   #
+# prevent sub class from overriding methods in Java which can  #
+# compromise Immutability. You can achieve same functionality  #
+# by making member as non final but private and not modifying  #
+# them except in constructor.                                  #
+# -------------------------------------------------------------#
+################################################################
+
+################################################################
+#   What is immutable object? Can you write immutable object?  #
+#--------------------------------------------------------------#
+# Immutable classes are Java classes whose objects can not be  #
+# modified once created. Any modification in Immutable object  #
+# result in new object. For example is String is immutable in  #
+# Java. Mostly Immutable are also final in Java, in order to   #
+# prevent sub class from overriding methods in Java which can  #
+# compromise Immutability. You can achieve same functionality  #
+# by making member as non final but private and not modifying  #
+# them except in constructor.                                  #
+# -------------------------------------------------------------#
+#                            Fail                              #
+################################################################
+
+################################################################
+#   What is immutable object? Can you write immutable object?  #
+#--------------------------------------------------------------#
+# Immutable classes are Java classes whose objects can not be  #
+# modified once created. Any modification in Immutable object  #
+# result in new object. For example is String is immutable in  #
+# Java. Mostly Immutable are also final in Java, in order to   #
+# prevent sub class from overriding methods in Java which can  #
+# compromise Immutability. You can achieve same functionality  #
+# by making member as non final but private and not modifying  #
+# them except in constructor.                                  #
+# -------------------------------------------------------------#
+#                            Pass                              #
+################################################################
