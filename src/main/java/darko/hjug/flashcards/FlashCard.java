@@ -33,4 +33,8 @@ public class FlashCard {
         this.title = title;
     }
 
+    public boolean canBeAdded() {
+        return (this.getTitle().length() > 0 && this.getBody().length() > 0);
+    }
+
 }

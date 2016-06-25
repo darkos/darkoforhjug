@@ -21,7 +21,9 @@ public class Subject {
     }
 
     public void addCard(FlashCard card) {
-        this.cards.add(card);
+        if(!this.cards.contains(card)){
+            this.cards.add(card);
+        }
     }
 
     public void removeCard(FlashCard card) {
@@ -124,6 +126,7 @@ public class Subject {
         sb.append("cards:\n");
         for(FlashCard card : this.getCards()) {
             sb.append(card.getTitle());
+            sb.append("\n");
         }
         System.out.println(sb.toString());
     }

@@ -76,6 +76,7 @@ public class InteractiveWorkbenchConsole {
                 out.println("======>\"" + line + "\"");
                 out.flush();
                 if (line.equalsIgnoreCase("quit") || line.equalsIgnoreCase("exit")) {
+                    workbench.saveDateStampedFileForcefully();
                     break;
                 }
                 else if (line.equalsIgnoreCase("cls") || line.equalsIgnoreCase("clear")) {

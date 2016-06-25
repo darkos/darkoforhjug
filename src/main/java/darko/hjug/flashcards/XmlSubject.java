@@ -99,6 +99,28 @@ public class XmlSubject {
         OutputFormat format = OutputFormat.createPrettyPrint();
         XMLWriter writer = null;
         File file = new File(filePath);
+        writeToFile(file);
+//        try {
+//            writer = new XMLWriter(
+//                    new FileWriter(file), format);
+//        } catch (UnsupportedEncodingException exc) {
+//            exc.printStackTrace();
+//        } catch(IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        try {
+//            writer.write(this.getDocument());
+//            writer.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+    }
+
+    public void writeToFile(File file) {
+        OutputFormat format = OutputFormat.createPrettyPrint();
+        XMLWriter writer = null;
+//        File file = new File(filePath);
         try {
             writer = new XMLWriter(
                     new FileWriter(file), format);
