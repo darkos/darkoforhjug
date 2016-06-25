@@ -19,4 +19,12 @@ public class Workbench {
         this.subject = this.xmlSubject.getSubject();
     }
 
+    public void subjectDetails() {
+        this.subject.details();
+    }
+
+    public void setSubjectName(String name) {
+        this.subject.setName(name);
+    }
+
 }

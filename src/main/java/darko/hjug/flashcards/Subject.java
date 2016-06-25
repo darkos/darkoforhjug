@@ -116,4 +116,16 @@ public class Subject {
         return this.cards.size();
     }
 
+    public void details() {
+        StringBuffer sb = new StringBuffer();
+        sb.append("subject:\n");
+        sb.append(this.getName());
+        sb.append("\n");
+        sb.append("cards:\n");
+        for(FlashCard card : this.getCards()) {
+            sb.append(card.getTitle());
+        }
+        System.out.println(sb.toString());
+    }
+
 }
