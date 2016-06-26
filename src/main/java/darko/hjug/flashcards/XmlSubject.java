@@ -28,7 +28,30 @@ public class XmlSubject {
         initDocumentFromXml(xmlFile);
     }
 
-    private void initDocumentFromXml(String xmlFile) {
+    public XmlSubject(File xmlFile) {
+        initDocumentFromXml(xmlFile);
+    }
+
+    public void initDocumentFromXml(File xmlFile) {
+        SAXReader reader = new SAXReader();
+        try {
+            this.document = reader.read(xmlFile);
+        } catch(DocumentException de) {
+            de.printStackTrace();
+        }
+        Element subjectElement = this.document.getRootElement();
+        Attribute nameAttr = subjectElement.attribute(Subject.nameXmlAttribute);
+        this.subject = new Subject(nameAttr.getText());
+        Element cards = subjectElement.element(Subject.cardsXmlNode);
+        List elementList = cards.elements();
+        for(Object obj : elementList) {
+            Element cardElement = (Element)obj;
+            this.subject.addCard(readCard(cardElement));
+        }
+    }
+
+
+    public void initDocumentFromXml(String xmlFile) {
         SAXReader reader = new SAXReader();
         try {
             this.document = reader.read(xmlFile);
@@ -99,6 +122,28 @@ public class XmlSubject {
         OutputFormat format = OutputFormat.createPrettyPrint();
         XMLWriter writer = null;
         File file = new File(filePath);
+        writeToFile(file);
+//        try {
+//            writer = new XMLWriter(
+//                    new FileWriter(file), format);
+//        } catch (UnsupportedEncodingException exc) {
+//            exc.printStackTrace();
+//        } catch(IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        try {
+//            writer.write(this.getDocument());
+//            writer.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+    }
+
+    public void writeToFile(File file) {
+        OutputFormat format = OutputFormat.createPrettyPrint();
+        XMLWriter writer = null;
+//        File file = new File(filePath);
         try {
             writer = new XMLWriter(
                     new FileWriter(file), format);

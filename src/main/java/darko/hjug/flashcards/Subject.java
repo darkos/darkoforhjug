@@ -11,13 +11,19 @@ public class Subject {
 
     private ArrayList<FlashCard> cards;
 
+    public Subject() {
+        this("unnamed");
+    }
+
     public Subject(String name) {
         this.name = name;
         cards = new ArrayList<FlashCard>();
     }
 
     public void addCard(FlashCard card) {
-        this.cards.add(card);
+        if(!this.cards.contains(card)){
+            this.cards.add(card);
+        }
     }
 
     public void removeCard(FlashCard card) {
@@ -102,6 +108,7 @@ public class Subject {
     public String getName() {
         return name;
     }
+    public void setName(String name) {this.name = name;}
 
     public ArrayList<FlashCard> getCards() {
         return cards;
@@ -109,6 +116,19 @@ public class Subject {
 
     public int getCardCount() {
         return this.cards.size();
+    }
+
+    public void details() {
+        StringBuffer sb = new StringBuffer();
+        sb.append("subject:\n");
+        sb.append(this.getName());
+        sb.append("\n");
+        sb.append("cards:\n");
+        for(FlashCard card : this.getCards()) {
+            sb.append(card.getTitle());
+            sb.append("\n");
+        }
+        System.out.println(sb.toString());
     }
 
 }
