@@ -39,6 +39,9 @@ public class ConsoleCli {
         options.addOption("loadsaved", true, "Loads saved Subject file into the workbench. Saves current into timestamped first");
         options.addOption("loadcard", true, "Loads card by card's order number");
         options.addOption("saveasfilename", true, "saves current Subject as providedfilename.xml in subjects directory.\n Will not overwrite existing.");
+        options.addOption("playsubject", true, "Loads Subject in player and displays first Card (slide)");
+        options.addOption("next", false, "Plays next card");
+        options.addOption("previous", false, "Plays previous card");
     }
 
     public void help() {
@@ -92,6 +95,13 @@ public class ConsoleCli {
         } else if (cmd.hasOption("saveasfilename")) {
             String saveasfilename = cmd.getOptionValue("saveasfilename");
             workbench.saveFile(saveasfilename);
+        }  else if (cmd.hasOption("playsubject")) {
+            String xmlFileName = cmd.getOptionValue("playsubject");
+            workbench.playSubject(xmlFileName);
+        }  else if (cmd.hasOption("next")) {
+            workbench.playNext();
+        } else if (cmd.hasOption("previous")) {
+            workbench.playPrevious();
         }
     }
 
