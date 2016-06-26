@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<subject name="Flash Cards on Windows">
+  <cards>
+    <card>
+      <title>Command line slide show-How To</title>
+      <body>I used two open source libraries to make this application: jLine and Apache CLI</body>
+    </card>
+    <card>
+      <title>What can jLine do for you</title>
+      <body>Jline description here, and maybe some examples</body>
+    </card>
+  </cards>
+</subject>

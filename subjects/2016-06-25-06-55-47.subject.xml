@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<subject name="unnamed">
+  <cards>
+    <card>
+      <title>Card1</title>
+      <body>BodyCard1</body>
+    </card>
+    <card>
+      <title>Card2</title>
+      <body>BodyCard2</body>
+    </card>
+  </cards>
+</subject>

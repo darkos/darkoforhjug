@@ -4,8 +4,15 @@ import java.util.List;
 
 public class Player {
 
-    public Player() {
+    private Subject subject;
+    private XmlSubject xmlSubject;
 
+    public Player() {
+    }
+
+    public void load(String xmlFilePath) {
+        this.xmlSubject = new XmlSubject(xmlFilePath);
+        this.setSubject(this.xmlSubject.getSubject());
     }
 
     // load
@@ -54,6 +61,10 @@ public class Player {
     public static void main(String[] args) {
         Player player = new Player();
         player.printEmptyBox(64, 15, '#');
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 
 }

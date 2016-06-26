@@ -28,6 +28,29 @@ public class XmlSubject {
         initDocumentFromXml(xmlFile);
     }
 
+    public XmlSubject(File xmlFile) {
+        initDocumentFromXml(xmlFile);
+    }
+
+    public void initDocumentFromXml(File xmlFile) {
+        SAXReader reader = new SAXReader();
+        try {
+            this.document = reader.read(xmlFile);
+        } catch(DocumentException de) {
+            de.printStackTrace();
+        }
+        Element subjectElement = this.document.getRootElement();
+        Attribute nameAttr = subjectElement.attribute(Subject.nameXmlAttribute);
+        this.subject = new Subject(nameAttr.getText());
+        Element cards = subjectElement.element(Subject.cardsXmlNode);
+        List elementList = cards.elements();
+        for(Object obj : elementList) {
+            Element cardElement = (Element)obj;
+            this.subject.addCard(readCard(cardElement));
+        }
+    }
+
+
     public void initDocumentFromXml(String xmlFile) {
         SAXReader reader = new SAXReader();
         try {

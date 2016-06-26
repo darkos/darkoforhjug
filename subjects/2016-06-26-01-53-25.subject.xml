@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<subject name="Design pattern interview questions for Beginners">
+  <cards>
+    <card>
+      <title>What is design patterns ? Have you used any design pattern in your code ?</title>
+      <body>Design patterns are tried and tested way to solve particular design issues by various programmers in the world. Design patterns are extension of code reuse.</body>
+    </card>
+    <card>
+      <title>Can you name few design patterns used in standard JDK library?</title>
+      <body>Decorator design pattern which is used in various Java IO classes, Singleton pattern which is used in Runtime , Calendar and various other classes, Factory pattern which is used along with various Immutable classes likes Boolean e.g. Boolean.valueOf and Observer pattern which is used in Swing and many event listener frameworks.</body>
+    </card>
+    <card>
+      <title>What is Singleton design pattern in Java ? write code for thread-safe singleton in Java</title>
+      <body>Singleton pattern focus on sharing of expensive object in whole system. Only one instance of a particular class is maintained in whole application which is shared by all modules. Java.lang.Runtime is a classical example of Singleton design pattern. You can also see my post 10 questions on Singleton pattern in Java for more questions and discussion. From Java 5 onwards you can use enum to thread-safe singleton.</body>
+    </card>
+    <card>
+      <title>What is main benefit of using factory pattern ? Where do you use it?</title>
+      <body>Factory pattern’s main benefit is increased level of encapsulation while creating objects. If you use Factory to create object you can later replace original implementation of Products or classes with more advanced and high performance implementation without any change on client layer. See my post on Factory pattern for more detailed explanation and benefits.</body>
+    </card>
+    <card>
+      <title>What is observer design pattern in Java</title>
+      <body>Observer design pattern is based on communicating changes in state of object to observers so that they can take there action. Simple example is a weather system where change in weather must be reflected in Views to show to public. Here weather object is Subject while different views are Observers. Look on this article for complete example of Observer pattern in Java.</body>
+    </card>
+    <card>
+      <title>Give example of decorator design pattern in Java ? Does it operate on object level or class level ?</title>
+      <body>Decorator pattern enhances capability of individual object. Java IO uses decorator pattern extensively and classical example is Buffered classes like BufferedReader and BufferedWriter which enhances Reader and Writer objects to perform Buffer level reading and writing for improved performance.</body>
+    </card>
+  </cards>
+</subject>
