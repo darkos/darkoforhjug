@@ -33,6 +33,7 @@ public class Player {
 
     public void next() {
         if(this.getCurrentCardNum() >= this.getSubject().getCards().size()-1) {
+            System.out.println("You are on the last card");
             return;
         }
         this.setCurrentCardNum(this.getCurrentCardNum()+1);
@@ -41,6 +42,7 @@ public class Player {
 
     public void previous() {
         if(this.getCurrentCardNum() <= 0) {
+            System.out.println("You are on the first card");
             return;
         }
         this.setCurrentCardNum(this.getCurrentCardNum()-1);
