@@ -14,6 +14,7 @@ public class Workbench {
     private FlashCard currentCard;
     private String xmlFilePath;
     private XmlSubject xmlSubject;
+    private Player player;
 
     public Workbench() {
         this.subject = new Subject();
@@ -173,6 +174,27 @@ public class Workbench {
 
     public Subject getSubject() {
         return this.subject;
+    }
+
+    public void playSubject(String xmlFileName) {
+        File dir = new File(System.getProperty("user.dir") + File.separator + "subjects");
+        File subjectFile = new File(dir, xmlFileName);
+        if(this.player == null) {
+            this.player = new Player();
+            this.player.load(subjectFile);
+        }
+    }
+
+    public void playNext() {
+        if(this.player != null) {
+            this.player.next();
+        }
+    }
+
+    public void playPrevious() {
+        if(this.player != null) {
+            this.player.previous();
+        }
     }
 
 }
