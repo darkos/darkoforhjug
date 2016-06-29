@@ -66,6 +66,11 @@ public class InteractiveWorkbenchConsole {
     }
 
     private void usage() {
+        System.out.println("######################################################");
+        System.out.println("Hello\nThis is a command line application called\nFlashCards.");
+        System.out.println("It gives you ability to create flash cards for study \nand group them under subject");
+        System.out.println("It also, includes a player with commands Next and Previous, \nso you can browse through your cardsand test/study your knowledge.");
+        System.out.println("######################################################");
         cli.help();
     }
 
@@ -83,6 +88,12 @@ public class InteractiveWorkbenchConsole {
                 }
                 else if (line.equalsIgnoreCase("cls") || line.equalsIgnoreCase("clear")) {
                     reader.clearScreen();
+                }
+                else if (line.equalsIgnoreCase(">>")) {
+                    workbench.playNext();
+                }
+                else if (line.equalsIgnoreCase("<<")) {
+                    workbench.playPrevious();
                 }
                 else {
                     processInputLine(line);
